@@ -1,0 +1,18 @@
+<%= render "nav_bar", flat: @flat %>
+<h1>All our flats (<%= @flats.length %>)</h1>
+<% @flats.each do |flat| %>
+  <div class="card">
+    <h2><%= flat.name %></h2>
+    <p><%= flat.address %></p>
+    <p>guests: <%= flat.number_of_guests %> / Price: <%= flat.price_per_night %> euros </p>
+    <p>
+      <%= link_to 'More Info', flat_path(flat) %>
+      <%= link_to 'Edit Info', edit_flat_path(flat) %>
+      <%= link_to 'Delete Flat',
+             flat_path(flat),
+             method: :delete,
+             data: { confirm: "Are you sure?" }%>
+    </p>
+
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= render "nav_bar", flat: @flat %>
+
+<%= simple_form_for [@flat] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :price_per_night %>
+  <%= f.submit "Add a flat", class: "btn btn-primary" %>
+<% end %>
